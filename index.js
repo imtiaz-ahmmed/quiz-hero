@@ -48,7 +48,7 @@ const loadQuiz = async () => {
   const res = await fetch("./data/quiz.json");
   const data = await res.json();
   quizData = data;
-  displayQuiz(data);
+  displayQuiz(quizData);
 };
 
 // Displaying quiz on quiz page
@@ -57,7 +57,7 @@ const displayQuiz = (data) => {
     quizContainer.innerHTML = "";
     return;
   }
-
+ 
   data.forEach((quiz, i) => {
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
@@ -72,6 +72,7 @@ const displayQuiz = (data) => {
 </div>`;
   });
 };
+
 
 // EventListener for quiz submit button
 document.querySelector("#submit").addEventListener("click", () => {
