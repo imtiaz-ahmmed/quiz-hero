@@ -112,7 +112,7 @@ document.querySelector("#submit").addEventListener("click", () => {
   let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
     localStorage.setItem(
-      "result",
+      "results",
       JSON.stringify([
         ...storage,
         {
