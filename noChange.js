@@ -1,6 +1,7 @@
 // এই পুরো ফাইলে কেও কোন কিছু পরিবর্তন করবেন না । এইখানে কোন Bug নেই ।
 
 // Handle Timer
+
 const quizTimer = (dismiss) => {
   if (dismiss) {
     clearInterval(timer);
@@ -46,6 +47,7 @@ const displayQuizOptions = (quiz, i) => {
 };
 
 // select or choose quiz
+
 const chooseQuiz = (index, givenAns) => {
   const isExist = answers.find((ans) => ans.id === quizData[index].id);
   if (isExist) {

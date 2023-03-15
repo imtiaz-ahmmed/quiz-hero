@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Blog Site</title>
 </head>
-<body>
-    
+
+<body class="text-justify">
+    <div class="bg-neutral-100 p-6 m-6 rounded-lg">
+        <h1 class="text-3xl text-green-600 my-3">Difference Between Map, filter, forEach and find</h1>
+        <p class="text-lg">
+
+            <b>map:</b> The map method returns a new array that is the result of applying a function to each element of
+            an existing array. It creates a new array with the same length as the original array, where each element is
+            the result of the function applied to the corresponding element in the original array. <br>
+
+            <b>filter: </b> The filter method returns a new array containing all elements of an existing array that pass
+            a test specified by a function. It creates a new array with only the elements that satisfy the specified
+            condition. <br>
+
+            <b>forEach:</b> The forEach method iterates over an array and executes a callback function on each element
+            of the array. It does not return a new array; instead, it performs an action on each element of the array.
+            <br>
+
+            <b>find:</b> The find method returns the first element of an array that satisfies a specified condition. It
+            returns undefined if no element satisfies the condition. <br>
+
+            In summary, map and filter create new arrays, while forEach does not. find returns a single element of an
+            array that satisfies a condition, while map and filter can return multiple elements.
+        </p>
+
+
+
+
+    </div>
+
+    <div class="bg-neutral-100 p-6 m-6 rounded-lg">
+        <h1 class="text-3xl text-green-600 my-3">Difference Between Local Storage, Section Storage and Cookies</h1>
+
+        <p class="text-lg">
+            Local storage, session storage, and cookies are all mechanisms for storing data in the browser, but they
+            differ in their purpose and behavior.<br>
+
+            <b>Cookies:</b>
+            Cookies are small text files that are stored on the client-side (browser) and are used to store
+            user-specific information like user preferences, login status, and shopping cart information. Cookies can be
+            set to expire after a specified time or when the user closes the browser. <br>
+            <b>Local Storage:</b>
+            Local storage is a web storage API that allows data to be stored in the browser beyond the lifetime of a
+            session (even after the browser is closed). Local storage is intended to store large amounts of data that
+            needs to be accessed frequently by the web application. It is more secure than cookies because it is not
+            sent to the server with every request, and it can only be accessed by the web application that created it.
+            <br>
+
+            <b>Session Storage:</b>
+            Session storage is similar to local storage in that it is also a web storage API, but it is intended to
+            store data for a single session only. Session storage is deleted when the user closes the browser or the
+            tab. It is useful for storing temporary data that is needed for a specific session, like shopping cart
+            information. <br>
+
+            In summary, cookies are used for small amounts of data that need to be sent to the server with every
+            request, local storage is used for large amounts of data that need to be accessed frequently by the web
+            application, and session storage is used for temporary data that is needed for a single session.
+        </p>
+
+
+    </div>
+    <div class="bg-neutral-100 p-6 m-6 rounded-lg">
+        <h1 class="text-3xl text-green-600 my-3">What is Event Loop & how it works?</h1>
+        <p class="text-lg">
+            The event loop is a fundamental concept in JavaScript that allows for the execution of code in a
+            non-blocking manner.
+
+            When JavaScript code is executed, it is executed on a single thread. This means that only one piece of code
+            can be executed at a time, and if a piece of code is blocking (e.g. waiting for a resource to become
+            available), the entire application will be blocked until that resource is available. This can cause the
+            application to become unresponsive, which is a bad user experience.
+
+            The event loop solves this problem by allowing code to be executed in a non-blocking manner. When an event
+            (such as a user click or a network request) occurs, it is added to a queue. The event loop continuously
+            checks the queue for any new events, and when it finds one, it executes the associated callback function.
+            Because the event loop executes code in a non-blocking manner, the application can continue to respond to
+            other events while waiting for the completion of the current event.
+
+            To summarize, the event loop is a mechanism that allows JavaScript code to be executed in a non-blocking
+            manner by using a queue to manage events and their associated callback functions. This allows for a more
+            responsive and performant application.
+        </p>
+
+    </div>
+    <div class="bg-neutral-100 p-6 m-6 rounded-lg">
+        <h1 class="text-3xl text-green-600 my-3"> quizTimer() </h1>
+        <p class="text-lg">
+            This function quizTimer is used to start a countdown timer that updates every second. It takes one parameter
+            dismiss which is a boolean value. If the value of dismiss is true, it clears the interval set by setInterval
+            and stops the timer. If dismiss is false, it sets the interval and starts the timer.
+
+            The function uses the setInterval method to execute an anonymous function every second. This anonymous
+            function updates the count and calculates the minutes and seconds to be displayed on the HTML element with
+            the ID count. The count is incremented by 1 every second.
+
+            If the count is greater than 60, it checks if it's even or odd. If it's even, it changes the color of the
+            text to red, and if it's odd, it changes it to light red. The HTML content of countHtml is
+            updated with the new value of min and countSec every second, along with the sec label in subscript using the
+            'sub' tag.
+
+            Overall, this function is designed to be used in a quiz or game application where a countdown timer is
+            required. It updates the timer every second and can be stopped by passing a true value to the dismiss
+            parameter.
+
+        </p>
+
+    </div>
+    <div class="bg-neutral-100 p-6 m-6 rounded-lg">
+        <h1 class="text-3xl text-green-600 my-3"> chooseQuiz() </h1>
+        <p class="text-lg">
+            This function chooseQuiz is used in a quiz application to update the user's answer for a specific question.
+            It takes two parameters, index and givenAns. The index parameter is the index of the question in the
+            quizData array for which the answer is being updated, and givenAns is the answer given by the user.
+
+            The function first checks if the answer for the specified question already exists in the answers array. It
+            does this by using the find method to search for an answer with the same id as the question being updated.
+            If an answer exists, it means that the user has already answered this question before, and the function
+            updates the existing answer with the new one.
+
+            If an answer for the question doesn't exist in the answers array, it means that the user is answering the
+            question for the first time. In this case, the function adds the question and the answer to the answers
+            array using the push method.
+
+            After updating the answer in the answers array, the function calls the displayAnswers function to update the
+            UI with the new set of answers.
+
+            Overall, this function is used to keep track of user's answers for a quiz application and update the UI with
+            the latest set of answers.
+
+        </p>
+
+    </div>
 </body>
+
 </html>
